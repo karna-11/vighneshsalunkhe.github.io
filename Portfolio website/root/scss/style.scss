@@ -1,0 +1,233 @@
+$bg: #090d16;
+$bg-soft: #101621;
+$card: #131b28;
+$text: #f4f7fb;
+$muted: #9aa7b8;
+$accent: #61dafb;
+$accent-2: #8b7cff;
+$border: rgba(255,255,255,.09);
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: $bg;
+  color: $text;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+a { text-decoration: none; }
+
+.navbar {
+  background: rgba(9, 13, 22, .88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid $border;
+  padding: 1rem 0;
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: -.04em;
+    span { color: $accent; }
+  }
+
+  .nav-link {
+    color: $muted;
+    transition: .2s ease;
+    &:hover, &.active { color: $text; }
+  }
+}
+
+.hero {
+  padding-top: 90px;
+  background:
+    radial-gradient(circle at 85% 30%, rgba(97,218,251,.10), transparent 30%),
+    radial-gradient(circle at 70% 80%, rgba(139,124,255,.08), transparent 30%);
+}
+
+.eyebrow {
+  color: $accent;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.hero h1 {
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  span {
+    background: linear-gradient(90deg, $accent, $accent-2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.text-secondary { color: $muted !important; }
+
+.btn-primary {
+  background: $accent;
+  border-color: $accent;
+  color: #061017;
+  font-weight: 700;
+  &:hover {
+    background: lighten($accent, 7%);
+    border-color: lighten($accent, 7%);
+    color: #061017;
+  }
+}
+
+.btn-outline-light {
+  border-color: rgba(255,255,255,.2);
+  &:hover { color: #091018; }
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: $muted;
+  font-size: .88rem;
+  span::before {
+    content: "•";
+    color: $accent;
+    margin-right: .5rem;
+  }
+}
+
+.hero-card {
+  padding: 1rem;
+  border: 1px solid $border;
+  border-radius: 1.25rem;
+  background: rgba(255,255,255,.025);
+  box-shadow: 0 30px 80px rgba(0,0,0,.25);
+}
+
+.code-window {
+  overflow: hidden;
+  border-radius: .8rem;
+  background: #0c111b;
+
+  .window-bar {
+    display: flex;
+    gap: .45rem;
+    padding: .8rem 1rem;
+    border-bottom: 1px solid $border;
+    i {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: #4c5667;
+    }
+  }
+
+  pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+    color: #d5dce7;
+    font-size: .85rem;
+    line-height: 1.8;
+  }
+
+  .code-purple { color: #c792ea; }
+  .code-green { color: #a8d08d; }
+}
+
+.section-padding { padding: 6rem 0; }
+.bg-dark-soft { background: $bg-soft; }
+
+.section-heading {
+  max-width: 700px;
+  h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; }
+}
+
+.feature-card, .stack-card, .info-card, .contact-card {
+  background: $card;
+  border: 1px solid $border;
+  border-radius: 1rem;
+  transition: transform .25s ease, border-color .25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(97,218,251,.25);
+  }
+}
+
+.feature-card {
+  padding: 2rem;
+  h3 { margin: 1rem 0 .75rem; }
+  p { color: $muted; margin: 0; }
+}
+
+.feature-icon {
+  color: $accent;
+  font-weight: 800;
+  font-size: .85rem;
+}
+
+.page-main { padding-top: 80px; }
+
+.page-hero {
+  padding: 7rem 0 4rem;
+  background: radial-gradient(circle at 75% 40%, rgba(97,218,251,.08), transparent 30%);
+}
+
+.info-card { padding: .5rem 1.5rem; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid $border;
+  &:last-child { border-bottom: 0; }
+  span { color: $muted; }
+}
+
+.stack-card {
+  padding: 1.5rem;
+  height: 100%;
+  h3 { font-size: 1.15rem; }
+  p { color: $muted; margin: 0; font-size: .95rem; }
+}
+
+.contact-card {
+  padding: 2rem;
+  color: $text;
+
+  .contact-label {
+    display: block;
+    color: $accent;
+    font-size: .72rem;
+    letter-spacing: .15em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  h3 { font-size: 1.15rem; word-break: break-word; }
+  p { color: $muted; margin: .4rem 0 0; }
+}
+
+.contact-note {
+  color: $muted;
+  border-top: 1px solid $border;
+  padding-top: 2rem;
+}
+
+.site-footer {
+  padding: 1.5rem 0;
+  color: $muted;
+  font-size: .85rem;
+  border-top: 1px solid $border;
+}
+
+@media (max-width: 991px) {
+  .hero { padding-top: 120px; }
+}
+
+@media (max-width: 575px) {
+  .hero h1 { font-size: 2.7rem; }
+  .section-padding { padding: 4rem 0; }
+  .hero-meta { flex-direction: column; gap: .4rem; }
+}
